@@ -48,7 +48,7 @@ export default function Home() {
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);
 
-    fetch('/api/my-endpoint', {
+    fetch('/.netlify/functions/handler', {
     })
         .then((response) => response.json())
         .then((data) => {

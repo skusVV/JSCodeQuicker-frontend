@@ -70,7 +70,7 @@ export default function Home() {
     const simplify = () => {
         setSimplifyInProgress(true);
         setResult('');
-        const body = JSON.stringify({ content: decodeURIComponent(value), rulesType: 'simplifyCode'});
+        const body = JSON.stringify({ content: new Buffer(value), rulesType: 'simplifyCode'});
 
         fetch('http://localhost:3003/api/v1/test-coverage', {
             method: "POST",
@@ -91,7 +91,8 @@ export default function Home() {
     <>
       <Head>
         <title>Test and Refactor Your Javascript Code with Ease - Automated Unit Testing and Refactoring Tools</title>
-          <meta name="description" content="Our platform provides a comprehensive solution for testing and refactoring your Javascript code, with support for popular frameworks such as NodeJs, NestJs, Express, ReactJs, Angular, and Vuejs. Try it out today and improve the quality of your code!" />
+          <meta name="keywords" content="refactoring tools, popular frameworks, NodeJs, NestJs, Express, ReactJs, Angular, Vuejs, code analysis, code improvements, development costs, stability, reliability"/>
+          <meta name="description" content="Our platform provides a comprehensive solution for refactoring your Javascript code, with support for popular frameworks such as NodeJs, NestJs, Express, ReactJs, Angular, and Vuejs. Try it out today and improve the quality of your code!" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -103,7 +104,7 @@ export default function Home() {
                   "@context": "http://schema.org",
                   "@type": "Product",
                   "name": "Js Code Quicker - Automated Unit Testing and Refactoring Tools",
-                  "description": "Our platform provides a comprehensive solution for testing and refactoring your Javascript code, with support for popular frameworks such as NodeJs, NestJs, Express, ReactJs, Angular, and Vuejs. Try it out today and improve the quality of your code!",
+                  "description": "Our platform provides a comprehensive solution for refactoring your Javascript code, with support for popular frameworks such as NodeJs, NestJs, Express, ReactJs, Angular, and Vuejs. Try it out today and improve the quality of your code!",
                   "brand": {
                   "@type": "Brand",
                   "name": "Js Code Quicker"
@@ -144,13 +145,13 @@ export default function Home() {
                   value={result}
                   width={'800px'}
                   minHeight="500px"
-                  height="auto"
+                  height="100%"
                   extensions={[javascript({ typescript: false })]}
                   theme="light"
               />
               <div className={styles.buttonWrapper}>
-                  <button className={styles.cover} onClick={cover} disabled={coverInProgress || simplifyInProgress}>Cover</button>
-                  <button className={styles.simplify} onClick={simplify} disabled={coverInProgress || simplifyInProgress}>Simplify</button>
+                  {/*<button className={styles.cover} onClick={cover} disabled={coverInProgress || simplifyInProgress}>Cover</button>*/}
+                  <button className={styles.simplify} onClick={simplify} disabled={coverInProgress || simplifyInProgress}>Refactor</button>
               </div>
           </div>
           <div className={styles.landing}>
@@ -159,10 +160,6 @@ export default function Home() {
               <Paragraph defaultColor="#a3a4ad"
                          paragraphText="Looking to improve the quality of your Javascript code? Our website provides a comprehensive solution for testing and refactoring your code, with support for popular frameworks such as NodeJs, NestJs, Express, ReactJs, Angular, and Vuejs." />
               <h2>Features</h2>
-              <h3>Automated Unit Testing</h3>
-              <Paragraph defaultColor="#a3a4ad"
-                         className={styles.right}
-                         paragraphText="Our platform allows you to easily create and run automated unit tests for your Javascript code. With detailed test reports and code coverage analysis, you can quickly identify and fix bugs before they cause problems in production." />
               <h3>Refactoring Tools</h3>
               <Paragraph defaultColor="#a3a4ad"
                          className={styles.left}
@@ -175,18 +172,15 @@ export default function Home() {
               <h3>Save Time and Money</h3>
               <Paragraph defaultColor="#a3a4ad"
                          className={styles.left}
-                         paragraphText="By automating your testing and refactoring processes, you can save valuable time and money on manual testing and code reviews. With our platform, you can quickly identify and fix issues before they cause problems in production, minimizing downtime and reducing development costs." />
+                         paragraphText="By automating your refactoring processes, you can save valuable time and money on manual testing and code reviews. With our platform, you can quickly identify and fix issues before they cause problems in production, minimizing downtime and reducing development costs." />
               <h3>Improve Code Quality</h3>
               <Paragraph defaultColor="#a3a4ad"
                          className={styles.right}
-                         paragraphText="Our automated testing and refactoring tools help you improve the quality of your code. By increasing your code coverage and making your code more readable and maintainable, you can reduce bugs and errors, leading to a more stable and reliable application." />
+                         paragraphText="Our automated refactoring tools help you improve the quality of your code. By increasing your code coverage and making your code more readable and maintainable, you can reduce bugs and errors, leading to a more stable and reliable application." />
               <h2>Get Started Today</h2>
               <Paragraph defaultColor="#a3a4ad"
                          className={styles}
                          paragraphText="Ready to take your Javascript code to the next level? Sign up for our platform today and start automating your testing and refactoring processes. With support for all popular frameworks and a user-friendly interface, our platform makes it easy to improve the quality of your code and deliver better applications. Try it out today!" />
-              <Paragraph defaultColor="#a3a4ad"
-                         className={styles}
-                         paragraphText="Tags: automated testing, refactoring tools, unit testing, code coverage, popular frameworks, NodeJs, NestJs, Express, ReactJs, Angular, Vuejs, SEO-friendly, code analysis, code improvements, development costs, stability, reliability" />
           </div>
       </main>
     </>

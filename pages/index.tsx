@@ -47,11 +47,18 @@ export default function Home() {
     const [result, setResult] = React.useState('');
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);
+
+    fetch('/api/my-endpoint', {
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('OKKOOK', data);
+        });
     const cover = async () => {
         setCoverInProgress(true);
         setResult('');
         const body = JSON.stringify({ content: decodeURIComponent(value), rulesType: 'testCoverage'});
-        fetch('http://localhost:3003/api/v1/test-coverage', {
+        fetch('/api/v1/test-coverage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -72,7 +79,7 @@ export default function Home() {
         setResult('');
         const body = JSON.stringify({ content: new Buffer(value), rulesType: 'simplifyCode'});
 
-        fetch('http://localhost:3003/api/v1/test-coverage', {
+        fetch('/api/v1/test-coverage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

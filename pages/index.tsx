@@ -58,7 +58,7 @@ export default function Home() {
         setCoverInProgress(true);
         setResult('');
         const body = JSON.stringify({ content: decodeURIComponent(value), rulesType: 'testCoverage'});
-        fetch('/api/v1/test-coverage', {
+        fetch('/api/test-coverage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -79,7 +79,7 @@ export default function Home() {
         setResult('');
         const body = JSON.stringify({ content: new Buffer(value), rulesType: 'simplifyCode'});
 
-        fetch('/api/v1/test-coverage', {
+        fetch('/api/test-coverage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

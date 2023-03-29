@@ -48,32 +48,7 @@ export default function Home() {
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);
 
-    // fetch('/.netlify/functions/handler', {
-    // })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log('OKKOOK', data);
-    //     });
-    const cover = async () => {
-        setCoverInProgress(true);
-        setResult('');
-        const body = JSON.stringify({ content: decodeURIComponent(value), rulesType: 'testCoverage'});
-        fetch('/api/test-coverage', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // setTimeout(() => {
-                    setResult(data.content);
-                    setCoverInProgress(false);
-                // }, 4000)
 
-            });
-    }
     const simplify = () => {
         setSimplifyInProgress(true);
         setResult('');

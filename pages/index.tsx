@@ -48,12 +48,12 @@ export default function Home() {
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);
 
-    fetch('/.netlify/functions/handler', {
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('OKKOOK', data);
-        });
+    // fetch('/.netlify/functions/handler', {
+    // })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         console.log('OKKOOK', data);
+    //     });
     const cover = async () => {
         setCoverInProgress(true);
         setResult('');

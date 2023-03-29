@@ -43,7 +43,7 @@ export const Paragraph =({ paragraphText, defaultColor, className }: any) => {
 }
 
 export default function Home() {
-    const [value, setValue] = React.useState('');
+    const [value, setValue] = React.useState('console.log(\'hello world!\');');
     const [result, setResult] = React.useState('');
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);

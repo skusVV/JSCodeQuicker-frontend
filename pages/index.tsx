@@ -48,7 +48,7 @@ export default function Home() {
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);
 
-    fetch('/api/handler', {
+    fetch('/.netlify/functions/handler', {
     })
         .then((response) => response.json())
         .then((data) => {
@@ -79,7 +79,7 @@ export default function Home() {
         setResult('');
         const body = JSON.stringify({ content: new Buffer(value), rulesType: 'simplifyCode'});
 
-        fetch('/api/test-coverage', {
+        fetch('/.netlify/functions/test-coverage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

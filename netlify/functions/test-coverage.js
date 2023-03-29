@@ -26,7 +26,7 @@ app.post('/api/v1/test-coverage', async (req, res) => {
 
         const completion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
-            messages: [{ role: 'user', content: Buffer.from(content, "utf-8").toString() + ( rules[rulesType] as string)}],
+            messages: [{ role: 'user', content: Buffer.from(content, "utf-8").toString() + rules[rulesType]}],
     });
 
         return res.send({content: extractCode(completion.data.choices[0].message.content)})

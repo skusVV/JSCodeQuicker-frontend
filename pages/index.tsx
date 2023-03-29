@@ -48,7 +48,7 @@ export default function Home() {
     const [coverInProgress, setCoverInProgress] = React.useState(false);
     const [simplifyInProgress, setSimplifyInProgress] = React.useState(false);
 
-    fetch('/.netlify/functions/handler', {
+    fetch('/api/handler', {
     })
         .then((response) => response.json())
         .then((data) => {
@@ -137,6 +137,7 @@ export default function Home() {
                   basicSetup={true}
                   value={value}
                   width={'800px'}
+                  minWidth={'800px'}
                   minHeight="500px"
                   height="100%"
                   extensions={[javascript({ typescript: false })]}
@@ -151,6 +152,7 @@ export default function Home() {
                   basicSetup={true}
                   value={result}
                   width={'800px'}
+                  minWidth={'800px'}
                   minHeight="500px"
                   height="100%"
                   extensions={[javascript({ typescript: false })]}

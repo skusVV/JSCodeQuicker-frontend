@@ -1,7 +1,7 @@
 [build]
   functions = "functions/"
 
-[[functions]]
+[functions]
   name = "test-coverage"
   runtime = "nodejs16.x"
   memory = 512

@@ -54,7 +54,7 @@ export default function Home() {
         setResult('');
         const body = JSON.stringify({ content: new Buffer(value), rulesType: 'simplifyCode'});
 
-        fetch('/.netlify/functions/test-coverage', {
+        fetch('/api/v1/test-coverage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

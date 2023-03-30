@@ -7,7 +7,7 @@ import { javascript } from '@codemirror/lang-javascript';
 const BANNER_MESSAGE = `
 <p>JSCodeQuicker is presently in its Beta version, which means that its performance may not be up to par, and the responses may not be optimal. We apologize for any inconvenience this may cause, and we want to assure you that we are working tirelessly to improve the platform's performance. Our team is dedicated to ensuring that your experience with JSCodeQuicker is exceptional, and we are committed to providing you with the best possible service.</p>
 
-<p>We understand that your feedback is crucial in helping us identify areas that require improvement, and we welcome any suggestions or concerns you may have. If you would like to share your thoughts with us, please do not hesitate to reach out to us via email at "jscodeQuicker@gmail.com." We value your input and appreciate your willingness to help us make JSCodeQuicker the best it can be. Thank you for your patience and understanding as we work towards achieving our goal of providing you with an unparalleled coding experience.</p>
+<p>We understand that your feedback is crucial in helping us identify areas that require improvement, and we welcome any suggestions or concerns you may have. If you would like to share your thoughts with us, please do not hesitate to reach out to us via email at "skus1992@@gmail.com." We value your input and appreciate your willingness to help us make JSCodeQuicker the best it can be. Thank you for your patience and understanding as we work towards achieving our goal of providing you with an unparalleled coding experience.</p>
 `
 
 export const Paragraph =({ paragraphText, defaultColor, className }: any) => {
